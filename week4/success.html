@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login Successful</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="success-container">
+
+        <header>
+
+            <h1>
+                Anil Neerukonda Institute of Technology & Sciences
+            </h1>
+
+            <h3>
+                Campus Placement Portal
+            </h3>
+
+        </header>
+
+        <nav>
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Apply Job</a>
+            <a href="#">Results</a>
+            <a href="#">Upcoming Placements</a>
+            <a href="#">Contact</a>
+
+        </nav>
+
+        <div class="success-box">
+
+            <h2>Login Successful!</h2>
+
+            <h3>
+                Welcome to ANITS Central Placement Portal
+            </h3>
+
+            <p>
+                Login Time:
+                <span id="loginTime"></span>
+            </p>
+
+            <p id="greeting"></p>
+
+            <div class="notice">
+
+                <h3>Important Notice</h3>
+
+                <ul>
+
+                    <li>
+                        Please contact the Training & Placement Office regularly for updates.
+                    </li>
+
+                    <li>
+                        Stay informed about the latest MNC and Mega Companies Recruitment Process.
+                    </li>
+
+                    <li>
+                        Check your registered Email ID and Placement Portal for announcements.
+                    </li>
+
+                    <li>
+                        Attend all Pre-Placement Talks (PPTs), Aptitude Training, Mock Interviews, and Company Drives.
+                    </li>
+
+                    <li>
+                        Keep your Resume, Academic Documents, and ID Card ready before every recruitment process.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // Get login time stored from login page
+        let loginTime = localStorage.getItem("loginTime");
+
+        document.getElementById("loginTime").innerHTML = loginTime;
+
+
+        // Get current hour
+        let hour = new Date().getHours();
+
+        let greeting = "";
+
+        if (hour < 12) {
+
+            greeting = "Good Morning";
+
+        } else if (hour < 17) {
+
+            greeting = "Good Afternoon";
+
+        } else {
+
+            greeting = "Good Night";
+
+        }
+
+        document.getElementById("greeting").innerHTML = greeting;
+
+    </script>
+
+</body>
+
+</html>
