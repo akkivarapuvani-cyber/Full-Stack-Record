@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - QuizMaster</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 QuizMaster
+        </div>
+
+        <div class="nav-links">
+
+            <button
+                class="logout-btn"
+                onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard">
+
+        <div class="welcome-card">
+
+            <h1>
+                Welcome,
+                <span id="userName">
+                    Student
+                </span>
+                👋
+            </h1>
+
+            <p>
+                Ready to test your technical knowledge?
+            </p>
+
+        </div>
+
+
+        <div class="quiz-info">
+
+            <h2>
+                🧠 Technical Knowledge Quiz
+            </h2>
+
+            <p>
+                Test your knowledge of HTML, CSS,
+                JavaScript, Node.js and Express.js.
+            </p>
+
+
+            <div class="quiz-details">
+
+                <div>
+                    <strong>📝 Questions</strong>
+                    <span>10</span>
+                </div>
+
+                <div>
+                    <strong>🎯 Type</strong>
+                    <span>Multiple Choice</span>
+                </div>
+
+                <div>
+                    <strong>⏱️ Time</strong>
+                    <span>No Limit</span>
+                </div>
+
+            </div>
+
+
+            <a href="/quiz.html">
+
+                <button class="start-btn">
+                    🚀 Start Quiz
+                </button>
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const loggedUser =
+            sessionStorage.getItem("loggedUser");
+
+
+        // If user is not logged in,
+        // send them back to login
+        if (!loggedUser) {
+
+            window.location.href =
+                "/login.html";
+
+        } else {
+
+            const user =
+                JSON.parse(loggedUser);
+
+
+            document.getElementById(
+                "userName"
+            ).innerText =
+                user.name;
+
+        }
+
+
+        function logout() {
+
+            sessionStorage.removeItem(
+                "loggedUser"
+            );
+
+            sessionStorage.removeItem(
+                "quizResult"
+            );
+
+            window.location.href =
+                "/login.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

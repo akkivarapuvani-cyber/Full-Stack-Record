@@ -1,0 +1,102 @@
+[
+    {
+        "question": "What does HTML stand for?",
+        "options": [
+            "Hyper Text Markup Language",
+            "High Text Machine Language",
+            "Hyperlink Text Markup Language",
+            "Home Tool Markup Language"
+        ],
+        "answer": "Hyper Text Markup Language"
+    },
+    {
+        "question": "Which language is used to style web pages?",
+        "options": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+        ],
+        "answer": "CSS"
+    },
+    {
+        "question": "Which language is used to add interactivity to a webpage?",
+        "options": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SQL"
+        ],
+        "answer": "JavaScript"
+    },
+    {
+        "question": "What does CSS stand for?",
+        "options": [
+            "Computer Style Sheets",
+            "Cascading Style Sheets",
+            "Creative Style System",
+            "Colorful Style Sheets"
+        ],
+        "answer": "Cascading Style Sheets"
+    },
+    {
+        "question": "Which command is used to initialize a Node.js project?",
+        "options": [
+            "node start",
+            "npm init",
+            "node init",
+            "npm start"
+        ],
+        "answer": "npm init"
+    },
+    {
+        "question": "Which module is commonly used to create a web server with Node.js?",
+        "options": [
+            "Express",
+            "React",
+            "Bootstrap",
+            "Angular"
+        ],
+        "answer": "Express"
+    },
+    {
+        "question": "Which method is commonly used to send data to a server?",
+        "options": [
+            "GET",
+            "POST",
+            "READ",
+            "FETCH"
+        ],
+        "answer": "POST"
+    },
+    {
+        "question": "Which JavaScript method converts a JSON string into an object?",
+        "options": [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "JSON.convert()",
+            "JSON.object()"
+        ],
+        "answer": "JSON.parse()"
+    },
+    {
+        "question": "Which JavaScript method converts an object into a JSON string?",
+        "options": [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "JSON.convert()",
+            "JSON.toObject()"
+        ],
+        "answer": "JSON.stringify()"
+    },
+    {
+        "question": "Which Express.js object contains data sent from a client in a POST request?",
+        "options": [
+            "req.body",
+            "req.data",
+            "req.post",
+            "req.form"
+        ],
+        "answer": "req.body"
+    }
+]

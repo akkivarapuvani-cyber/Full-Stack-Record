@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Review Answers - QuizMaster</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🧠 QuizMaster</div>
+
+        <div class="nav-links">
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/quiz.html">Quiz</a>
+        </div>
+    </nav>
+
+    <main class="review-container">
+
+        <h1>📖 Review Answers</h1>
+
+        <p class="review-subtitle">
+            Review the questions you attempted and compare your answers.
+        </p>
+
+        <div id="reviewContainer"></div>
+
+        <div class="review-buttons">
+            <a href="/result.html">
+                <button>⬅ Back to Result</button>
+            </a>
+
+            <a href="/dashboard.html">
+                <button>🏠 Dashboard</button>
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+
+        const quizResult =
+            sessionStorage.getItem("quizResult");
+
+        const reviewContainer =
+            document.getElementById("reviewContainer");
+
+        console.log("Stored quiz result:", quizResult);
+
+        if (!quizResult) {
+
+            reviewContainer.innerHTML = `
+                <div class="no-result">
+                    <h2>No quiz result found</h2>
+                    <p>Please complete the quiz first.</p>
+
+                    <a href="/quiz.html">
+                        <button>Start Quiz</button>
+                    </a>
+                </div>
+            `;
+
+        } else {
+
+            try {
+
+                const result =
+                    JSON.parse(quizResult);
+
+                console.log("Quiz result object:", result);
+
+                if (!result.results ||
+                    result.results.length === 0) {
+
+                    reviewContainer.innerHTML = `
+                        <div class="no-result">
+                            <h2>No answers available</h2>
+                            <p>No quiz answers were stored.</p>
+                        </div>
+                    `;
+
+                } else {
+
+                    result.results.forEach((item, index) => {
+
+                        // Show only attempted questions
+                        if (item.userAnswer !== "Not answered") {
+
+                            const questionDiv =
+                                document.createElement("div");
+
+                            questionDiv.className =
+                                item.isCorrect
+                                    ? "review-card correct"
+                                    : "review-card wrong";
+
+                            questionDiv.innerHTML = `
+
+                                <h3>
+                                    Question ${index + 1}
+                                </h3>
+
+                                <p class="question">
+                                    ${item.question}
+                                </p>
+
+                                <p>
+                                    <strong>Your Answer:</strong>
+                                    ${item.userAnswer}
+                                </p>
+
+                                <p>
+                                    <strong>Correct Answer:</strong>
+                                    ${item.correctAnswer}
+                                </p>
+
+                                <p class="answer-status">
+                                    ${
+                                        item.isCorrect
+                                            ? "✅ Correct"
+                                            : "❌ Wrong"
+                                    }
+                                </p>
+
+                            `;
+
+                            reviewContainer.appendChild(
+                                questionDiv
+                            );
+                        }
+
+                    });
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Error reading quiz result:",
+                    error
+                );
+
+                reviewContainer.innerHTML = `
+                    <div class="no-result">
+                        <h2>Error loading answers</h2>
+                        <p>Quiz result data is invalid.</p>
+                    </div>
+                `;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

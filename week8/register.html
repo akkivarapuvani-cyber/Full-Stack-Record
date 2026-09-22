@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register - QuizMaster</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 QuizMaster
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/login.html">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <div class="form-container">
+
+        <div class="form-box">
+
+            <h1>
+                Create Account
+            </h1>
+
+            <p class="form-subtitle">
+                Register to start your quiz journey
+            </p>
+
+
+            <form id="registerForm">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label>
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    placeholder="Enter your age"
+                    min="10"
+                    max="100"
+                    required
+                >
+
+
+                <label>
+                    Date of Birth
+                </label>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required
+                >
+
+
+                <label>
+                    Gender
+                </label>
+
+                <select
+                    id="gender"
+                    name="gender"
+                    required
+                >
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    placeholder="Enter mobile number"
+                    pattern="[0-9]{10}"
+                    required
+                >
+
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Create a username"
+                    required
+                >
+
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+
+            <p
+                id="registerMessage"
+                class="message">
+            </p>
+
+
+            <p class="form-footer">
+
+                Already have an account?
+
+                <a href="/login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

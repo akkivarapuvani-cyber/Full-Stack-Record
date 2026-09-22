@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login - QuizMaster</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 QuizMaster
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/register.html">
+                Register
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <div class="form-container">
+
+        <div class="form-box login-box">
+
+            <h1>
+                Welcome Back!
+            </h1>
+
+            <p class="form-subtitle">
+                Login to continue your quiz
+            </p>
+
+
+            <form id="loginForm">
+
+                <label>
+                    Username / Email
+                </label>
+
+                <input
+                    type="text"
+                    id="loginUsername"
+                    name="username"
+                    placeholder="Enter username or email"
+                    required
+                >
+
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p
+                id="loginMessage"
+                class="message">
+            </p>
+
+
+            <p class="form-footer">
+
+                Don't have an account?
+
+                <a href="/register.html">
+                    Register
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

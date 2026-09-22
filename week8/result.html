@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Result - QuizMaster</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🧠 QuizMaster
+        </div>
+
+    </nav>
+
+
+    <main class="result-page">
+
+        <div class="result-container">
+
+            <div class="result-icon">
+                🎯
+            </div>
+
+            <h1>
+                Quiz Completed!
+            </h1>
+
+            <p class="result-subtitle">
+                Here is your quiz result
+            </p>
+
+
+            <div class="score-circle">
+
+                <span id="score">
+                    Loading...
+                </span>
+
+            </div>
+
+
+            <p id="message"
+               class="score-message">
+            </p>
+
+
+            <div class="result-buttons">
+
+                <a href="/review.html">
+
+                    <button>
+                        📖 Review Answers
+                    </button>
+
+                </a>
+
+
+                <a href="/quiz.html">
+
+                    <button class="secondary-btn">
+                        🔄 Try Again
+                    </button>
+
+                </a>
+
+
+                <a href="/dashboard.html">
+
+                    <button class="secondary-btn">
+                        🏠 Dashboard
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const storedResult =
+            sessionStorage.getItem(
+                "quizResult"
+            );
+
+
+        if (!storedResult) {
+
+            document.getElementById(
+                "score"
+            ).innerText =
+                "No Result";
+
+
+            document.getElementById(
+                "message"
+            ).innerText =
+                "Please take the quiz first.";
+
+        } else {
+
+            const result =
+                JSON.parse(
+                    storedResult
+                );
+
+
+            document.getElementById(
+                "score"
+            ).innerText =
+                result.score +
+                " / " +
+                result.total;
+
+
+            const percentage =
+                (result.score /
+                result.total) * 100;
+
+
+            if (percentage >= 80) {
+
+                document.getElementById(
+                    "message"
+                ).innerText =
+                    "🎉 Excellent performance!";
+
+            } else if (percentage >= 50) {
+
+                document.getElementById(
+                    "message"
+                ).innerText =
+                    "👍 Good job! Keep practicing.";
+
+            } else {
+
+                document.getElementById(
+                    "message"
+                ).innerText =
+                    "📚 Keep practicing and try again.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
